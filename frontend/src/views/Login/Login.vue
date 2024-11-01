@@ -2,19 +2,16 @@
     <div class="auth-page">
 
         <div :class="$style.form">
-            <h1>Sign up</h1>
-            <router-link :to="{ name: 'login' }">Have an acсount?</router-link>
+            <h1>Sign in</h1>
+            <router-link :to="{ name: 'register' }">Need an acсount?</router-link>
             <form @submit.prevent="onSubmit">
-                <label for="name">
-                    <input type="text" name="name" id="name" placeholder="UserName">
-                </label>
                 <label for="email">
                     <input type="email" id="email" name="email" placeholder="Email">
                 </label>
                 <label for="password">
                     <input type="password" name="password" id="password" placeholder="Password">
                 </label>
-                <button v-bind:disabled="isSubmitting">Sign Up</button>
+                <button v-bind:disabled="isSubmitting">Sign in</button>
             </form>
         </div>
 
@@ -24,10 +21,10 @@
 
 <script>
 
-import styles from './Register.module.css';
+import styles from '../Register/Register.module.css';
 
 export default {
-    name: 'McvRegister',
+    name: 'McvLogin',
     computed: {
         isSubmitting() {
             return this.$store.state.auth.isSubmiting
@@ -38,7 +35,8 @@ export default {
     },
     methods: {
         onSubmit() {
-            this.$store.commit('registerStart');
+            console.log(this.$store.state.auth.isSubmiting)
+            this.$store.commit('registerStart')
         },
     },
 }

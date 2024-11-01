@@ -36,12 +36,19 @@
   margin-bottom: 0.5em;
 }
 
-.form p {
+.form a {
   color: #5cb85c;
   text-decoration: none;
   font-size: calc(var(--fz) * 1.5);
   margin: 0;
   margin-bottom: 0.5em;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.form a:hover,
+.form a:focus {
+  opacity: 0.8;
 }
 
 form {
@@ -108,10 +115,13 @@ form button {
   }
 }
 
-form button:hover,
-form button:focus,
-form button:focus-within {
+form button:not(:disabled):hover,
+form button:not(:disabled):focus {
   color: #5cb85c;
   box-shadow: 0 0 0 0.05em #5cb85c;
   background-color: #f8f9fa;
+}
+
+form button:disabled {
+  opacity: 0.8;
 }
