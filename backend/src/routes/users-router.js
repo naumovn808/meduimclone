@@ -4,8 +4,8 @@ const router = new Router()
 
 const auth = require("../middleware/auth-required-middleware")
 
-router.post("/users/login", ctrl.login)
 router.post("/users", ctrl.post)
+router.post("/users/login", ctrl.login)
 
 router.get("/user", auth, ctrl.get)
 router.put("/user", auth, ctrl.put)
