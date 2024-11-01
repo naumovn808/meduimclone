@@ -101,3 +101,26 @@ body {
   padding: 0;
   background-color: #f8f9fa;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* sizes */
+:root {
+  --fz: max(calc(1 * 1vw), 15px);
+
+  --offset: max(calc(1.25 * 1vw), 15px);
+  --offset-xxxl: calc(var(--offset) * 10);
+  --offset-xxl: calc(var(--offset) * 8);
+  --offset-xl: calc(var(--offset) * 7);
+  --offset-l: calc(var(--offset) * 6);
+  --offset-m: calc(var(--offset) * 5);
+  --offset-s: calc(var(--offset) * 4);
+  --hh: calc(var(--offset) * 4);
+  --offset-grid: calc(var(--offset) * 4);
+}

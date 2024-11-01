@@ -1,6 +1,6 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
 import HomePage from '@/views/HomePage.vue';
-import McvRegister from '@/views/Register.vue';
+import McvRegister from '@/views/Register/Register.vue';
 
 const routes = [
   {
