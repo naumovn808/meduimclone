@@ -1,7 +1,7 @@
 <template>
     <div class="auth-page">
 
-        <div :class="$style.form">
+        <div class="form">
             <h1>Sign in</h1>
             <router-link :to="{ name: 'register' }">Need an acсount?</router-link>
             <form @submit.prevent="onSubmit">
@@ -21,7 +21,7 @@
 
 <script>
 
-import styles from '../Register/Register.module.css';
+import styles from '../Register/Register.css';
 
 export default {
     name: 'McvLogin',

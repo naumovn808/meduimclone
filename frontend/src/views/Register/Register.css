@@ -55,13 +55,14 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--offset);
+  gap: calc(var(--offset) * 1.5);
   width: 100%;
 }
 
 form label {
   width: 100%;
   display: block;
+  position: relative;
 }
 
 form input {
@@ -82,6 +83,14 @@ form input {
   outline: none;
   transition-property: box-shadow;
   transition-duration: 0.5s;
+}
+
+form span {
+  position: absolute;
+  left: 0;
+  bottom: -40%;
+  color: rgb(173, 44, 44);
+  font-size: var(--fz);
 }
 
 form input:focus,
@@ -124,4 +133,8 @@ form button:not(:disabled):focus {
 
 form button:disabled {
   opacity: 0.8;
+}
+
+.input-error {
+  border: 0.05em solid brown;
 }
