@@ -2,7 +2,7 @@
     <div class="auth-page">
         <div class="form">
             <h1>Sign up</h1>
-            <router-link :to="{ name: 'login' }">Have an account?</router-link>
+            <router-link :to="{ name: 'login' }" aria-label="link to page login">Have an account?</router-link>
             <form @submit.prevent="onSubmit">
                 <label for="name">
                     <input type="text" name="name" id="name" placeholder="UserName" v-model="username"

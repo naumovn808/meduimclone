@@ -1,12 +1,7 @@
 <script>
 
-import HelloWorld from "@/components/HelloWorld.vue"
-
 export default {
   name: 'HomePage',
-  components: {
-    HelloWorld
-  }
 }
 
 </script>
@@ -14,7 +9,7 @@ export default {
 <template>
   <div class="home">
 
-    <HelloWorld />
+    <h1>home</h1>
 
   </div>
 </template>
