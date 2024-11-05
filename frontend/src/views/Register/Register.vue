@@ -27,6 +27,7 @@
 
 <script>
 import styles from './Register.css';
+import { actionsTypes } from '@/store/modules/auth';
 
 export default {
     name: 'McvRegister',
@@ -51,7 +52,7 @@ export default {
     methods: {
         onSubmit() {
             this.$store
-                .dispatch('register', {
+                .dispatch(actionsTypes.register, {
                     email: this.email,
                     username: this.username,
                     password: this.password
