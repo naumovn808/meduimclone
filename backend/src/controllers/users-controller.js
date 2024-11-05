@@ -59,34 +59,41 @@ module.exports = {
   },
 
   async login(ctx) {
-    const { body } = ctx.request
-
-    ctx.assert(
-      _.isObject(body.user) && body.user.email && body.user.password,
-      422,
-      new ValidationError(["malformed request"], "", "email or password"),
-    )
-
-    let user = await db("users")
-      .first()
-      .where({ email: body.user.email })
-
+    const { body } = ctx.request;
+  
+    if (!body.user || (!body.user.email && !body.user.password)) {
+      ctx.throw(422, new ValidationError(["Email and password fields are required"], "", "emptyFields"));
+      return;
+    }
+  
+    if (!body.user.email) {
+      ctx.throw(422, new ValidationError(["Email is required"], "", "emptyEmail"));
+      return;
+    }
+  
+    if (!body.user.password) {
+      ctx.throw(422, new ValidationError(["Password is required"], "", "emptyPassword"));
+      return;
+    }
+  
+    let user = await db("users").first().where({ email: body.user.email });
+  
     ctx.assert(
       user,
       401,
-      new ValidationError(["is invalid"], "", "email or password"),
-    )
-
-    const isValid = await bcrypt.compare(body.user.password, user.password)
-
+      new ValidationError(["Invalid email or password"], "", "invalidCredentials")
+    );
+  
+    const isValid = await bcrypt.compare(body.user.password, user.password);
+  
     ctx.assert(
       isValid,
       401,
-      new ValidationError(["is invalid"], "", "email or password"),
-    )
+      new ValidationError(["Invalid email or password"], "", "invalidCredentials")
+    );
+  
+    user = generateJWTforUser(user);
+    ctx.body = { user: _.omit(user, ["password"]) };
+  }
 
-    user = generateJWTforUser(user)
-
-    ctx.body = { user: _.omit(user, ["password"]) }
-  },
 }
