@@ -5,7 +5,7 @@ const state = {
   isSubmitting: false,
   currentUser: null,
   validationErrors: null,
-  isloggedIn: null,
+  isLoggedIn: null,
 };
 
 export const mutationTypes = {
@@ -25,32 +25,32 @@ export const actionsTypes = {
 
 const mutations = {
   [mutationTypes.registerStart](state) {
-    state.isSubmitting = true;
-    state.validationErrors = null;
+    state.isSubmitting = true
+    state.validationErrors = null
   },
   [mutationTypes.registerSuccess](state, payload) {
-    state.isSubmitting = false;
-    state.currentUser = payload;
-    state.isloggedIn = true;
+    state.isSubmitting = false
+    state.isLoggedIn = true
+    state.currentUser = payload
   },
   [mutationTypes.registerFailure](state, payload) {
-    state.isSubmitting = false;
-    state.validationErrors = payload;
+    state.isSubmitting = false
+    state.validationErrors = payload
   },
   [mutationTypes.loginStart](state) {
-    state.isSubmitting = true;
-    state.validationErrors = null;
+    state.isSubmitting = true
+    state.validationErrors = null
   },
   [mutationTypes.loginSuccess](state, payload) {
-    state.isSubmitting = false;
-    state.currentUser = payload;
-    state.isloggedIn = true;
+    state.isSubmitting = false
+    state.isLoggedIn = true
+    state.currentUser = payload
   },
   [mutationTypes.loginFailure](state, payload) {
-    state.isSubmitting = false;
-    state.validationErrors = payload;
-  },
-};
+    state.isSubmitting = false
+    state.validationErrors = payload
+  }
+}
 
 const actions = {
   [actionsTypes.register](context, credentials) {

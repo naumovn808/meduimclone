@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'SourceSerif';
-  src: url('@/assets/fonts/source-serif/SourceSerif-Bold.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-serif/SourceSerif-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
   font-family: 'SourceSerif';
-  src: url('@/assets/fonts/source-serif/SourceSerif-Regular.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-serif/SourceSerif-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -26,8 +24,7 @@
 
 @font-face {
   font-family: 'Merriweather';
-  src: url('@/assets/fonts/merrwheather/MerriweatherSans-Bold.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/merrwheather/MerriweatherSans-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -35,8 +32,7 @@
 
 @font-face {
   font-family: 'Merriweather';
-  src: url('@/assets/fonts/merrwheather/MerriweatherSans-Regular.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/merrwheather/MerriweatherSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -44,8 +40,7 @@
 
 @font-face {
   font-family: 'SourceSans';
-  src: url('@/assets/fonts/source-sans/SourceSans3-BlackItalic.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-sans/SourceSans3-BlackItalic.ttf') format('truetype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -61,8 +56,7 @@
 
 @font-face {
   font-family: 'SourceSans';
-  src: url('@/assets/fonts/source-sans/SourceSans3-Light.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-sans/SourceSans3-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -70,8 +64,7 @@
 
 @font-face {
   font-family: 'SourceSans';
-  src: url('@/assets/fonts/source-sans/SourceSans3-LightItalic.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-sans/SourceSans3-LightItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -79,8 +72,7 @@
 
 @font-face {
   font-family: 'SourceSans';
-  src: url('@/assets/fonts/source-sans/SourceSans3-Regular.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-sans/SourceSans3-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -88,8 +80,7 @@
 
 @font-face {
   font-family: 'SourceSans';
-  src: url('@/assets/fonts/source-sans/SourceSans3-SemiBold.ttf')
-    format('truetype');
+  src: url('@/assets/fonts/source-sans/SourceSans3-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -101,7 +92,6 @@ body {
   padding: 0;
   background-color: #f8f9fa;
   overflow-x: hidden;
-
 }
 
 * {
@@ -122,7 +112,10 @@ body {
   border-radius: 50px;
 }
 
-
+.container {
+  margin-left: var(--offset-xxl);
+  margin-right: var(--offset-xxl);
+}
 
 /* sizes */
 :root {
