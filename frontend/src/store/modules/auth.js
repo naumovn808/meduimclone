@@ -23,34 +23,52 @@ export const actionsTypes = {
   login: '[auth] login',
 };
 
+export const getterTypes = {
+  currentUser: '[auth] currentUser',
+  isLoggedIn: '[auth] isLoggedIn',
+  isAnonymous: '[auth] isAnonymous',
+};
+
+const getters = {
+  [getterTypes.currentUser]: (state) => {
+    return state.currentUser;
+  },
+  [getterTypes.isLoggedIn]: (state) => {
+    return Boolean(state.isLoggedIn);
+  },
+  [getterTypes.isAnonymous]: (state) => {
+    return state.isLoggedIn === false;
+  },
+};
+
 const mutations = {
   [mutationTypes.registerStart](state) {
-    state.isSubmitting = true
-    state.validationErrors = null
+    state.isSubmitting = true;
+    state.validationErrors = null;
   },
   [mutationTypes.registerSuccess](state, payload) {
-    state.isSubmitting = false
-    state.isLoggedIn = true
-    state.currentUser = payload
+    state.isSubmitting = false;
+    state.isLoggedIn = true;
+    state.currentUser = payload;
   },
   [mutationTypes.registerFailure](state, payload) {
-    state.isSubmitting = false
-    state.validationErrors = payload
+    state.isSubmitting = false;
+    state.validationErrors = payload;
   },
   [mutationTypes.loginStart](state) {
-    state.isSubmitting = true
-    state.validationErrors = null
+    state.isSubmitting = true;
+    state.validationErrors = null;
   },
   [mutationTypes.loginSuccess](state, payload) {
-    state.isSubmitting = false
-    state.isLoggedIn = true
-    state.currentUser = payload
+    state.isSubmitting = false;
+    state.isLoggedIn = true;
+    state.currentUser = payload;
   },
   [mutationTypes.loginFailure](state, payload) {
-    state.isSubmitting = false
-    state.validationErrors = payload
-  }
-}
+    state.isSubmitting = false;
+    state.validationErrors = payload;
+  },
+};
 
 const actions = {
   [actionsTypes.register](context, credentials) {
@@ -90,5 +108,5 @@ export default {
   state,
   actions,
   mutations,
-  // getters
+  getters,
 };

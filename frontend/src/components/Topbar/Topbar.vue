@@ -10,7 +10,7 @@
                         Home
                     </router-link>
                 </li>
-                <template v-if="isLoggedIn">
+                <template v-if="isAnonymous">
                     <li>
                         <router-link :to="{ name: 'home' }" active-class="active" class="nav-link">
                             <img src="/article.svg" alt="article" width="20" height="20">
@@ -24,7 +24,8 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'home', params: { slug: currentUser.name } }" class="nav-link nav-profile">
+                        <router-link :to="{ name: 'home', params: { slug: currentUser.name } }"
+                            class="nav-link nav-profile">
                             <img :src="currentUser.image ? currentUser.image : '/def-avtr.png'" alt="avatar" width="30"
                                 height="30" />
                             {{ currentUser.username }}
@@ -50,15 +51,32 @@
 
 <script>
 
-import style from './style.css'
-
-import { mapState } from 'vuex';
+import style from './topBar.css'
+import { getterTypes } from '@/store/modules/auth';
+import { mapGetters } from 'vuex'
 export default {
     name: 'McvTopbar',
     computed: {
-        ...mapState({
-            currentUser: state => state.auth.currentUser,
-            isLoggedIn: state => state.auth.isLoggedIn
+        // ...mapState({
+        // currentUser: state => state.auth.currentUser,
+        // isLoggedIn: state => state.auth.isLoggedIn
+        // }),
+
+        // currentUser() {
+        //     return this.$store.getters[getterTypes.currentUser]
+        // },
+
+        // isLoggedIn() {
+        //     return this.$store.getters[getterTypes.isLoggedIn]
+        // },
+
+        // isAnonymous() {
+        //     return this.$store.getters[getterTypes.isAnonymous]
+        // },
+        ...mapGetters({
+            currentUser: getterTypes.currentUser,
+            isLoggedIn: getterTypes.isLoggedIn,
+            isAnonymous: getterTypes.isAnonymous
         }),
 
         $style() {
