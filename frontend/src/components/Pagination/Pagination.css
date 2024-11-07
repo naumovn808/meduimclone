@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin: calc(var(--offset) * 2) 0 var(--offset-grid) 0;
+}
+
+.page-item {
+  border: 0.02em solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.1em;
+  min-width: calc(var(--offset) * 2.5);
+  min-height: calc(var(--offset) * 2.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.page-link {
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5cb85c;
+}
+
+.page-item.active {
+  background-color: #5cb85c;
+}
+
+.page-item.active .page-link {
+  color: white;
+}
+
+.page-item:not(.page-item.active):hover,
+.page-item:not(.page-item.active):focus,
+.page-item:not(.page-item.active):focus-within {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page-item:not(.page-item.active):hover .page-link,
+.page-item:not(.page-item.active):focus .page-link,
+.page-item:not(.page-item.active):focus-within .page-link {
+  text-decoration: underline;
+}

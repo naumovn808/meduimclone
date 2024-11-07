@@ -117,6 +117,20 @@ body {
   margin-right: var(--offset-xxl);
 }
 
+@media (max-width: 780px) {
+  .container {
+    margin-left: calc(var(--offset) * 2);
+    margin-right: calc(var(--offset) * 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-left: var(--offset);
+    margin-right: var(--offset);
+  }
+}
+
 /* sizes */
 :root {
   --fz: max(calc(1 * 1vw), 15px);

@@ -1,0 +1,114 @@
+.article-preview {
+  border-top: 0.1em solid rgba(0, 0, 0, 0.3);
+  padding: calc(var(--offset) * 2) 0;
+}
+
+.article-meta {
+  display: flex;
+  gap: 0.5em;
+  cursor: pointer;
+  align-items: center;
+}
+
+.article-meta a img {
+  width: calc(var(--offset) * 2.5);
+  height: calc(var(--offset) * 2.5);
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+
+.preview-link {
+  color: black;
+  cursor: pointer;
+}
+
+.preview-link h1 {
+  color: black;
+  font-size: calc(var(--fz) * 2);
+  transition-duration: 0.5s;
+  transition-property: color;
+  margin-bottom: 0;
+}
+
+.preview-link p {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: calc(var(--fz) * 1.5);
+  margin-bottom: 1em;
+  transition-duration: 0.5s;
+  transition-property: color;
+}
+
+.preview-link span {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: var(--fz);
+  transition-duration: 0.5s;
+  transition-property: color;
+}
+
+.preview-link b {
+  font-size: calc(var(--fz) * 1.5);
+}
+
+.add-to-favorites {
+  margin-left: auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author {
+  font-size: calc(var(--fz) * 1.5);
+  color: #5cb85c;
+  font-family: 'Merriweather';
+  transition-duration: 0.5s;
+  transition-property: color;
+}
+
+.article-meta:hover .author,
+.article-meta:focus .author,
+.article-meta:focus-within .author {
+  color: rgb(92, 184, 92, 0.8);
+}
+
+.article-meta:hover img,
+.article-meta:focus img,
+.article-meta:focus-within img {
+  opacity: 0.8;
+}
+
+.date {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: var(--fz);
+  font-weight: 600;
+  transition-duration: 0.5s;
+  transition-property: color;
+}
+
+.article-meta:hover .date,
+.article-meta:focus .date,
+.article-meta:focus-within .date {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.preview-link:hover h1,
+.preview-link:focus h1,
+.preview-link:focus-within h1 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.preview-link:hover p,
+.preview-link:focus p,
+.preview-link:focus-within p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.preview-link:hover span,
+.preview-link:focus span,
+.preview-link:focus-within span {
+  color: rgba(0, 0, 0, 0.7);
+}

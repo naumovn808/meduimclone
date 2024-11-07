@@ -21,6 +21,46 @@ const routes = [
     component: McvLogin,
     meta: {title: 'Login'},
   },
+  {
+    path: '/feed',
+    name: 'yourFeed',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/tags/:slug',
+    name: 'tag',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/articles/new',
+    name: 'createArticle',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/articles/:slug',
+    name: 'article',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/articles/:slug/edit',
+    name: 'editArticle',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/profiles/:slug',
+    name: 'userProfile',
+    component: McvGlobalFeed
+  },
+  {
+    path: '/profiles/:slug/favorites',
+    name: 'userProfileFavorites',
+    component: McvGlobalFeed
+  }
 ];
 
 const router = createRouter({
