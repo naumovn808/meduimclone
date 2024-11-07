@@ -1,13 +1,13 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
-import HomePage from '@/views/HomePage.vue';
+import McvGlobalFeed from '@/views/GlobalFeed/GlobalFeed.vue';
 import McvRegister from '@/views/Register/Register.vue';
 import McvLogin from '@/views/Login/Login.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomePage,
+    name: 'GlobalFeed',
+    component: McvGlobalFeed,
   },
   {
     path: '/register',

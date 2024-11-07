@@ -6,13 +6,8 @@
             <form @submit.prevent="onSubmit">
 
                 <label for="email">
-                    <input
-                        type="email"
-                        id="email" 
-                        name="email" 
-                        placeholder="Email" 
-                        v-model="email" 
-                        :class="{ 'input-error': hasError('emptyEmail') || hasError('invalidCredentials') || hasError('emptyFields')}">
+                    <input type="email" id="email" name="email" placeholder="Email" v-model="email"
+                        :class="{ 'input-error': hasError('emptyEmail') || hasError('invalidCredentials') || hasError('emptyFields') }">
 
                     <span v-if="hasError('emptyEmail')">{{ getErrorMessage('emptyEmail') }}</span>
                     <span v-if="hasError('emptyFields')">{{ getErrorMessage('emptyFields') }}</span>
@@ -21,16 +16,11 @@
                 </label>
 
                 <label for="password">
-                    <input 
-                        type="password" 
-                        name="password" 
-                        id="password" 
-                        placeholder="Password" 
-                        v-model="password"
-                        :class="{ 'input-error': hasError('emptyPassword') || hasError('invalidCredentials') ||  hasError('emptyFields')}">
+                    <input type="password" name="password" id="password" placeholder="Password" v-model="password"
+                        :class="{ 'input-error': hasError('emptyPassword') || hasError('invalidCredentials') || hasError('emptyFields') }">
 
                     <span v-if="hasError('emptyPassword')">{{ getErrorMessage('emptyPassword') }}</span>
-                    
+
                 </label>
 
                 <button v-bind:disabled="isSubmitting">Sign in</button>
@@ -71,7 +61,7 @@ export default {
                     password: this.password
                 })
                 .then(() => {
-                    this.$router.push({ name: 'home' });
+                    this.$router.push({ name: 'GlobalFeed' });
                 })
                 .catch((error) => {
                     console.error('error: ', error)
